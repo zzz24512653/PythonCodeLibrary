@@ -6,8 +6,10 @@ def bubble_sort(nums, reverse=False):
     """
     if nums is None or len(nums) < 2:
         return nums
-    for i in range(len(nums)-1):
-        for j in range(i+1, len(nums)):
-            if reverse is True and nums[i] < nums[j] or reverse is False and nums[i] > nums[j]:
-                nums[i], nums[j] = nums[j], nums[i]
+    for i in range(len(nums)-1, 0, -1):
+        for j in range(i):
+            if reverse is True and nums[j] < nums[j+1] or reverse is False and nums[j] > nums[j+1]:
+                nums[j], nums[j+1] = nums[j+1], nums[j]
     return nums
+
+
